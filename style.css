@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, #ffeef7, #fcb69f);
+  background-size: cover;
+  background-position: center center;
+  -webkit-font-smoothing: antialiased;
+}
+
+.paper {
+  background-image: url("https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1");
+  background-size: cover;
+  background-position: center;
+  padding: 20px 100px;
+  transform: rotateZ(-5deg);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.5s ease;
+  filter: brightness(0.98);
+}
+
+/* Gentle hover effect: remove rotation and boost brightness */
+.paper:hover {
+  transform: rotateZ(0deg);
+  box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.35);
+  filter: brightness(1);
+}
+
+.paper.heart {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  padding: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  animation: float 3s ease-in-out infinite;
+}
+
+.paper.heart::after {
+  content: "";
+  background-image: url('https://cdn.pixabay.com/photo/2016/03/31/19/25/cartoon-1294994__340.png');
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: 150px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+}
+
+.paper.image {
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.85);
+}
+
+.paper.image p {
+  font-size: 32px;
+}
+
+img {
+  max-height: 200px;
+  width: 100%;
+  user-select: none;
+  border-radius: 5px;
+}
+
+/* Romantic text styling */
+p {
+  font-family: 'Great Vibes', 'Zeyada', cursive;
+  font-size: 50px;
+  color: #b30059; /* Deep romantic pink */
+  opacity: 0.9;
+  user-select: none;
+  text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.8);
+  margin: 10px 0;
+  animation: fadeIn 2s ease forwards;
+}
+
+/* Styling for the red paper element */
+.paper.red {
+  background: rgba(255, 230, 230, 0.9);
+  border: 2px solid #ffc0cb;
+}
+
+/* Floating animation for the heart paper */
+@keyframes float {
+  0% { transform: translateY(0) rotateZ(-5deg); }
+  50% { transform: translateY(-10px) rotateZ(-5deg); }
+  100% { transform: translateY(0) rotateZ(-5deg); }
+}
+
+/* Fade in text animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+}
